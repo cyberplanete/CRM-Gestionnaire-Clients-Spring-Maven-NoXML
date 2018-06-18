@@ -55,7 +55,7 @@ Bienvenue sur la page d'accueil de la société Cyberplanete!
 	<form:form action="${pageContext.request.contextPath}/logout" 
 			   method="POST">
 	
-		<input type="submit" value="Logout" />
+		<input type="submit" value="Déconnexion" />
 	
 	</form:form>
 	

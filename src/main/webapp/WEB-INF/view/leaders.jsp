@@ -1,7 +1,7 @@
 <html>
 
 <head>
-	<title>luv2code LEADERS Home Page</title>
+	<title>LEADERS Page d'accueil</title>
 </head>
 
 <body>
