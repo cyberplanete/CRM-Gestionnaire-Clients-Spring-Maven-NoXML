@@ -18,7 +18,7 @@
 
 <hr>
 
-<a href="${pageContext.request.contextPath}/">Back to Home Page</a>
+<a href="${pageContext.request.contextPath}/">Retour à la page d'accueil</a>
 
 </body>
 

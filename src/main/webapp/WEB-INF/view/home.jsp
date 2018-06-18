@@ -20,18 +20,18 @@ Bienvenue sur la page d'accueil de la société Cyberplanete!
 	<!-- display user name and role -->
 	
 	<p>
-		User: <security:authentication property="principal.username" />
+		Utilisateur: <security:authentication property="principal.username" />
 		<br><br>
 		Role(s): <security:authentication property="principal.authorities" />
 	</p>
 	
 	<security:authorize access="hasRole('MANAGER')">
 	
-		<!-- Add a link to point to /leaders ... this is for the managers -->
+		<!-- Ajouter un lien pour pointer vers / leaders ... c'est pour les gestionnaires -->
 		
 		<p>
-			<a href="${pageContext.request.contextPath}/leaders">Leadership Meeting</a>
-			(Only for Manager peeps)
+			<a href="${pageContext.request.contextPath}/leaders">En cours de dev</a>
+			
 		</p>
 
 	</security:authorize>	
@@ -39,11 +39,11 @@ Bienvenue sur la page d'accueil de la société Cyberplanete!
 	
 	<security:authorize access="hasRole('ADMIN')">  
 
-		<!-- Add a link to point to /systems ... this is for the admins -->
+		<!-- Ajouter un lien pour pointer vers / systems ... ceci est pour les admins -->
 		
 		<p>
-			<a href="${pageContext.request.contextPath}/systems">IT Systems Meeting</a>
-			(Only for Admin peeps)
+			<a href="${pageContext.request.contextPath}/systems">IT Systemes Rencontre ..  en dev</a>
+			
 		</p>
 	
 	</security:authorize>

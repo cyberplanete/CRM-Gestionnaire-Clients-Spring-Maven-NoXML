@@ -6,7 +6,7 @@
 
 <body>
 
-<h2>Page Systeme</h2>
+<h2>Page Système</h2>
 
 <hr>
 
@@ -18,7 +18,7 @@ En cours de modification
 
 <hr>
 
-<a href="${pageContext.request.contextPath}/">Back to Home Page</a>
+<a href="${pageContext.request.contextPath}/">Retour à la page d'accueil</a>
 
 </body>
 
