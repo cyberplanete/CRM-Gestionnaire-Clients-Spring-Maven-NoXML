@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Welcome</title>
+		<title>Bienvenue</title>
 	</head> 
 	<body>
 		<h2>${message}</h2>

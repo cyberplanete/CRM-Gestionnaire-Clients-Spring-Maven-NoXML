@@ -6,14 +6,14 @@
 
 <body>
 
-<h2>luv2code LEADERS Home Page</h2>
+<h2>Page Dirigeant</h2>
 
 <hr>
 
 <p>
-	See you in Brazil ... for our annual Leadership retreat!
+	
 	<br>
-	Keep this trip a secret, don't tell the regular employees LOL :-)
+	Page uniquement pour dirigeant
 </p>
 
 <hr>

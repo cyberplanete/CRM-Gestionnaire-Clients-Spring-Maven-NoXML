@@ -25,16 +25,17 @@
 	
 		<c:if test="${param.error != null}">
 		
-			<i class="failed">Sorry! You entered invalid username/password.</i>
+			<i class="failed">Vous avez entré un nom d'utilisateur / mot de passe invalide.</i>
 			
 		</c:if>
 			
 		<p>
-			User name: <input type="text" name="username" />
+			
+Nom d'utilisateur: <input type="text" name="username" />
 		</p>
 
 		<p>
-			Password: <input type="password" name="password" />
+			Mot de passe: <input type="password" name="password" />
 		</p>
 		
 		<input type="submit" value="Login" />

@@ -1,12 +1,12 @@
 <html>
 
 <head>
-	<title>luv2code - Access Denied</title>
+	<title>Accès refusé</title>
 </head>
 
 <body>
 
-	<h2>Access Denied - You are not authorized to access this resource.</h2>
+	<h2>Accès refusé - Vous n'êtes pas autorisé à accéder à cette ressource.</h2>
 
 	<hr>
 	

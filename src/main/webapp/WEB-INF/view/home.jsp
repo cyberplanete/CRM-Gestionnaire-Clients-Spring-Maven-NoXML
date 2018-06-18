@@ -4,15 +4,15 @@
 <html>
 
 <head>
-	<title>luv2code Company Home Page</title>
+	<title>Cyberplanete Page d'accueil</title>
 </head>
 
 <body>
-	<h2>luv2code Company Home Page</h2>
+	<h2>Cyberplanete Page d'accueil</h2>
 	<hr>
 	
 	<p>
-	Welcome to the luv2code company home page!
+Bienvenue sur la page d'accueil de la société Cyberplanete!
 	</p>
 	
 	<hr>
