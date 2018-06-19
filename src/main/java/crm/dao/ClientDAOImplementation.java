@@ -40,7 +40,7 @@ public class ClientDAOImplementation implements ClientDAO {
 		// Obtenir la session en cours d'hibernate
 		session = sessionFactory.openSession();
 
-		// Creation du Critère
+		// Contruction du Critère
 		CriteriaBuilder builder = session.getCriteriaBuilder();
 		CriteriaQuery<ClientClass> criteriaQuery = builder.createQuery(ClientClass.class);
 		Root<ClientClass> clients = criteriaQuery.from(ClientClass.class);
