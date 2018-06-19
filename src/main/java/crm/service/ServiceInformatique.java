@@ -9,7 +9,7 @@ import crm.entity.UtilisateurClass;
 
 public interface ServiceInformatique {
 	
-	public List<UtilisateurClass> GetListeUtilisateur();
+	public List<UtilisateurClass> GetListeUtilisateurs();
 
 	public void ajoutUtilisateur(UtilisateurClass utilisateurClass);
 

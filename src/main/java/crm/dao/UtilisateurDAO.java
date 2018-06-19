@@ -8,7 +8,7 @@ import crm.entity.UtilisateurClass;
 
 public interface UtilisateurDAO {
 	
-	public List<UtilisateurClass> getUtilisateurs();
+	public List<UtilisateurClass> getListeUtilisateurs();
 
 	public void addUtilisateur(UtilisateurClass utilisateurClass);
 

@@ -45,16 +45,8 @@ public class ClientDAOImplementation implements ClientDAO {
 		CriteriaQuery<ClientClass> criteriaQuery = builder.createQuery(ClientClass.class);
 		Root<ClientClass> clients = criteriaQuery.from(ClientClass.class);
 		criteriaQuery.select(clients);
-		Query<ClientClass> query = session.createQuery(criteriaQuery);
-
-		// Créer une requete sur la ClassClient pour obtenir la liste
-		List<ClientClass> listClients = query.getResultList();
-
-		// sessionFactory.close();
-		// session.close();
-		// Retour sous forme de liste
-		session.close();
-		return listClients;
+//		session.close();
+		return session.createQuery(criteriaQuery).getResultList();
 
 		// version XML
 		// //Obtenir la session en cours d'hibernate

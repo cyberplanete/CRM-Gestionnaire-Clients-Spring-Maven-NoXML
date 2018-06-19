@@ -23,9 +23,9 @@ public class ServiceInformatiqueImplementation implements ServiceInformatique {
 	
 	@Override
 	@Transactional
-	public List<UtilisateurClass> GetListeUtilisateur() {
+	public List<UtilisateurClass> GetListeUtilisateurs() {
 		
-		List<UtilisateurClass> listUtilisateurs = utilisateurDAO.getUtilisateurs();
+		List<UtilisateurClass> listUtilisateurs = utilisateurDAO.getListeUtilisateurs();
 		
 		return listUtilisateurs;
 	}

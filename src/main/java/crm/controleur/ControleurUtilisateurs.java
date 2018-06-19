@@ -13,9 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import crm.entity.ClientClass;
 import crm.entity.UtilisateurClass;
-import crm.service.ServiceClient;
 import crm.service.ServiceInformatique;
 
 @Configuration
@@ -31,12 +29,17 @@ public class ControleurUtilisateurs {
 	public String listeUtilisateurs(Model model) {
 
 		// Obenir la liste des utilisateurs 
-		List<UtilisateurClass> listeUtilisateurs = serviceInformatique.GetListeUtilisateur();
+		List<UtilisateurClass> listeUtilisateurs = serviceInformatique.GetListeUtilisateurs();
 
 		// listeUtilisateurjsp est utilisé dans un
 		// foreach sur la page liste-utilisateurs
 		model.addAttribute("listeUtilisateursJSP", listeUtilisateurs);
 
+		for (UtilisateurClass utilisateurClass : listeUtilisateurs) {
+			System.out.println(utilisateurClass.getNom());
+		}
+		
+		
 		// retourne la liste des utilisateurs sur la page jsp suivante
 		return "liste-utilisateurs";
 	}
@@ -105,7 +108,7 @@ public class ControleurUtilisateurs {
 	@PostMapping("/process-recherche-utilisateur")
 	public String processRechercheUtilisateur(@ModelAttribute("utilisateurClassJSP") UtilisateurClass nom, Model model) {
 
-		List<UtilisateurClass> ListeUtilisateurClass = serviceInformatique.GetListeUtilisateur();
+		List<UtilisateurClass> ListeUtilisateurClass = serviceInformatique.GetListeUtilisateurs();
 		List<UtilisateurClass> ListeUtilisateurClassTrouvé = new ArrayList<>();
 
 		boolean utilisateurTrouvé = false;

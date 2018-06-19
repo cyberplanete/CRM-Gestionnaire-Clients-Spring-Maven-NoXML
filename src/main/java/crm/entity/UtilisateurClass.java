@@ -3,20 +3,25 @@ package crm.entity;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Id;
 
+@Entity
 @Table(name="users")
 public class UtilisateurClass {
 	
+	@Id
 	@NotNull(message="Nom obligatoire")
 	@Size(min=1, message="est obligatoire")
+	@Column(name="username")
 	private String nomUtilisateur;
 	
 	@Column(name="nom")
 	private String nom;
 	
 	@Column(name="prenom")
-	private String prénom;
+	private String prenom;
 	
 	@Column(name="email")
 	private String email;
@@ -53,12 +58,12 @@ public class UtilisateurClass {
 		this.nom = nom;
 	}
 
-	public String getPrénom() {
-		return prénom;
+	public String getPrenom() {
+		return prenom;
 	}
 
-	public void setPrénom(String prénom) {
-		this.prénom = prénom;
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
 	}
 
 	public String getEmail() {

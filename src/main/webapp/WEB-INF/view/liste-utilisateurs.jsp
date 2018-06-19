@@ -22,9 +22,9 @@
 
 	<div id="container">
 		<div id="content">
-			<!-- Ajout du boutton ajouter client - refère à @GetMapping controlleur ajoutclient-->
-					<input type="button" value="Ajouter un client" 
-					onclick="window.location.href='formAjoutClientJSP'; return false;"
+			<!-- Ajout du bouton ajouter utilisateur - refère à @GetMapping controlleur ajoutUtilisateur-->
+					<input type="button" value="Ajouter utilisateur" 
+					onclick="window.location.href='formulaireAjoutUtilisateur'; return false;"
 					class="add-button"/>
 				
 				
@@ -47,19 +47,19 @@
 				
 					<!-- lien de mise à jour dans la variable lienMiseAJour - id obtenu dans une boucle for -->
 					<c:url var="lienMiseAJour" value="/clients/formulaireMAJClient">
-						<c:param name="idClient" value="${tempClients.id}">
+						<c:param name="idClient" value="${tempUtilisateurs.nomUtilisateur}">
 						</c:param>
 					</c:url>
 					<!-- lien de suppression dans une variable lienSuppression - id obtenu dans une boucle for -->
 						<c:url var="lienSuppression" value="/clients/suppressionClient">
-						<c:param name="idClient" value="${tempClients.id}">
+						<c:param name="idClient" value="${tempUtilisateurs.nomUtilisateur}">
 						</c:param>
 					</c:url>
 				
 					<tr>
-						<td>${tempClients.prenom}</td>
-						<td>${tempClients.nom}</td>
-						<td>${tempClients.email}</td>
+						<td>${tempUtilisateurs.prenom}</td>
+						<td>${tempUtilisateurs.nom}</td>
+						<td>${tempUtilisateurs.email}</td>
 						<td><a href="${lienMiseAJour}">Mise à jour </a>
 						|<a href="${lienSuppression}" onclick="if (!(confirm('Confirmer vous la suppression ?')))return false"> Suppression</a> </td>
 					</tr>

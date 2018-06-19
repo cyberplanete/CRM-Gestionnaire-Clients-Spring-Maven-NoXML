@@ -11,10 +11,12 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import crm.entity.UtilisateurClass;
 
+@Component
 @Repository
 public class UtilisateurDAOImplementation implements UtilisateurDAO {
 
@@ -24,7 +26,7 @@ public class UtilisateurDAOImplementation implements UtilisateurDAO {
 	private Session session;
 	
 	@Override
-	public List<UtilisateurClass> getUtilisateurs() {
+	public List<UtilisateurClass> getListeUtilisateurs() {
 		
 		session = sessionFactory.openSession();
 		
@@ -33,10 +35,9 @@ public class UtilisateurDAOImplementation implements UtilisateurDAO {
 		CriteriaQuery<UtilisateurClass> criteriaQuery = builder.createQuery(UtilisateurClass.class);
 		Root<UtilisateurClass> utilisateurs = criteriaQuery.from(UtilisateurClass.class);
 		criteriaQuery.select(utilisateurs);
-		Query<UtilisateurClass> query = session.createQuery(criteriaQuery);
-		List<UtilisateurClass> listUtilisateur = query.getResultList();
-		session.close();
-		return listUtilisateur;
+		
+		return session.createQuery(criteriaQuery).getResultList();
+		
 	}
 
 	@Override
