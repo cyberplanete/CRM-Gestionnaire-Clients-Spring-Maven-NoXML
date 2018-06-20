@@ -5,7 +5,7 @@
 <html>
 <head>
 
-<title>CRM Gestion des Clients</title>
+<title>CRM Gestion des utilisateurs</title>
 <!-- Ajout dossier CSS -->
 	<link 	type="text/css" 
 			rel="stylesheet" 
@@ -22,17 +22,6 @@
 
 	<div id="container">
 		<div id="content">
-			<!-- Ajout du bouton ajouter utilisateur - refère à @GetMapping controlleur ajoutUtilisateur-->
-					<input type="button" value="Ajouter utilisateur" 
-					onclick="window.location.href='formulaireAjoutUtilisateur'; return false;"
-					class="add-button"/>
-				
-				
-			<!--Ajout du bouton @GetMapping formClientRechercheJSP du controlleur -->	
-			<input value="Rechercher un utilisateur" type="button" onclick="window.location.href='formRechercheUtilisateur'; return false;"
-			class="add-buton">
-			
-			
 				
 			<table>
 				<tr>
@@ -42,17 +31,17 @@
 					<th>Actions</th>
 				</tr>
 			
-			<!-- une boucle pour obtenir la liste des utilisateurs depuis le controlleur -->
-				<c:forEach var="tempUtilisateurs" items="${listeUtilisateursJSP}">
+			<!-- une boucle pour obtenir la liste des clients depuis le controlleur -->
+				<c:forEach var="tempUtilisateurs" items="${ListeUtilisateurClassTrouvéJSP}">
 				
 					<!-- lien de mise à jour dans la variable lienMiseAJour - id obtenu dans une boucle for -->
 					<c:url var="lienMiseAJour" value="/utilisateurs/formulaireMAJUtitilisateur">
-						<c:param name="idUtilisateurJSP" value="${tempUtilisateurs.nomUtilisateur}">
+						<c:param name="idUtilisateurJSP" value="${tempUtilisateurs.nom}">
 						</c:param>
 					</c:url>
 					<!-- lien de suppression dans une variable lienSuppression - id obtenu dans une boucle for -->
-						<c:url var="lienSuppression" value="/clients/suppressionClient">
-						<c:param name="idUtilisateurJSP" value="${tempUtilisateurs.nomUtilisateur}">
+						<c:url var="lienSuppression" value="/utilisateurs/suppressionUtilisateur">
+						<c:param name="idUtilisateurJSP" value="${tempUtilisateurs.nom}">
 						</c:param>
 					</c:url>
 				
@@ -66,7 +55,11 @@
 				</c:forEach>
 
 			</table>
-</div>	
+</div>
+<p>
+			<a href="${pageContext.request.contextPath}/utilisateurs/liste">Retour
+				vers la liste</a>
+		</p>	
 	</div>
 </body>
 </html>

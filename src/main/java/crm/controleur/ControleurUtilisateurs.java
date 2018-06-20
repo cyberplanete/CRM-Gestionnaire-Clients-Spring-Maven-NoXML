@@ -71,11 +71,8 @@ public class ControleurUtilisateurs {
 			serviceInformatique.ajoutUtilisateur(utilisateurClass);
 			return "redirect:/utilisateurs/liste/";
 		}
-		
-		
 	
 	}
-
 	
 	@GetMapping("/formulaireMAJUtitilisateur")
 	public String miseAJourClient(@RequestParam("idUtilisateurJSP") String idUtilisateur, Model model) {
@@ -84,7 +81,7 @@ public class ControleurUtilisateurs {
 		UtilisateurClass utilisateurClass = serviceInformatique.getUtilisateur(idUtilisateur);
 
 		// Auto complete le formulaire
-		model.addAttribute("idUtilisateurJSP", utilisateurClass);
+		model.addAttribute("utilisateurClassJSP", utilisateurClass);
 		// et envoyé sur la page
 		return "miseAJour-utilisateur";
 	}
@@ -120,8 +117,8 @@ public class ControleurUtilisateurs {
 		return "rechercher-utilisateur";
 	}
 
-	@PostMapping("/process-recherche-utilisateur")
-	public String processRechercheUtilisateur(@ModelAttribute("utilisateurClassJSP") UtilisateurClass nom, Model model) {
+	@PostMapping("/process-recherche-utilisateur")//Récupération de l'attibut model: utilisateurClassJSP_nom
+	public String processRechercheUtilisateur(@ModelAttribute("utilisateurClassJSP_nom") UtilisateurClass nom, Model model) {
 
 		List<UtilisateurClass> ListeUtilisateurClass = serviceInformatique.GetListeUtilisateurs();
 		List<UtilisateurClass> ListeUtilisateurClassTrouvé = new ArrayList<>();

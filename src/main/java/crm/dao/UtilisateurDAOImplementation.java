@@ -54,15 +54,13 @@ public class UtilisateurDAOImplementation implements UtilisateurDAO {
 	public UtilisateurClass getUtilisateur(String idUtilisateur) {
 		CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
 		CriteriaQuery<UtilisateurClass> criteriaQuery = criteriaBuilder.createQuery(UtilisateurClass.class);
-		Root<UtilisateurClass> clients = criteriaQuery.from(UtilisateurClass.class);
+		Root<UtilisateurClass> utilisateurs = criteriaQuery.from(UtilisateurClass.class);
 		//Un select sur la table clients
-		criteriaQuery.select(clients);
+		criteriaQuery.select(utilisateurs);
 		//
-		criteriaQuery.where(criteriaBuilder.equal(clients.get("user"), idUtilisateur));
-		Query<UtilisateurClass> maQuery = session.createQuery(criteriaQuery);
-		UtilisateurClass utilisateurClass = maQuery.getSingleResult();
-		session.close();
-		return utilisateurClass;
+		criteriaQuery.where(criteriaBuilder.equal(utilisateurs.get("nomUtilisateur"), idUtilisateur));
+		
+		return session.createQuery(criteriaQuery).getSingleResult();
 	}
 
 	@Override

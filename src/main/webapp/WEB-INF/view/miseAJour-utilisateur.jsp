@@ -6,25 +6,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link type="text/css" rel="stylesheet"
 	href="${pageContext.request.contextPath}/styles/style.css ">
 <link type="text/css" rel="stylesheet"
 	href="${pageContext.request.contextPath}/styles/add-customer-style.css ">
 
-<title>CRM -Gestionnaire des Clients - Recherche utilisateurs</title>
 </head>
 <body>
-
-	<div id="wrapper">
+<div id="wrapper">
 		<div id="header">
-			<h2>CRM -Gestionnaire des utilisateurs</h2>
+			<h2>CRM -Gestionnaire des Clients</h2>
 		</div>
 		<div id="container">
-			<h3>Recherche utilisateur</h3>
-
+			<h3>Sauvegarde client</h3>
 		</div>
-		<form:form action="process-recherche-utilisateur" modelAttribute="utilisateurClassJSP"
+		<form:form action="processMAJUtilisateur" modelAttribute="utilisateurClassJSP"
 			method="POST">
+
+		<!-- Ce champ cache permet d'obtenir  complete les données nécéssaire à la mise à jour du client  -->
+		 <form:hidden path="nomUtilisateur"/> 
 
 			<table>
 				<tbody>
@@ -33,7 +35,25 @@
 						<td><form:input path="nom" /></td>
 					</tr>
 
+					<tr>
+						<td><label>Prénom :</label></td>
+						<td><form:input path="prenom" /></td>
+					</tr>
+
+					<tr>
+						<td><label>Email :</label></td>
+						<td><form:input path="email" /></td>
+					</tr>
+
+					<tr>
+						<td><label>nom utilisateur :</label></td>
+						<td><form:input path="nomUtilisateur" /></td>
+					</tr>
 					
+					<tr>
+						<td><label>Mot de passe :</label></td>
+						<td><form:input path="motDePasse" /></td>
+					</tr>
 
 					<tr>
 						<td><label></label></td>
