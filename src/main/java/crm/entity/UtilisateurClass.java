@@ -1,6 +1,7 @@
 package crm.entity;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,12 +19,16 @@ public class UtilisateurClass {
 	private String nomUtilisateur;
 	
 	@Column(name="nom")
+	@NotNull(message="nom obligatoire")
 	private String nom;
 	
 	@Column(name="prenom")
+	@NotNull(message="prenom obligatoire")
 	private String prenom;
 	
 	@Column(name="email")
+	@NotNull(message="email obligatoire")
+	@Pattern(regexp="[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}",message="Adresse email non valide")
 	private String email;
 	
 	@NotNull(message="Nom obligatoire")

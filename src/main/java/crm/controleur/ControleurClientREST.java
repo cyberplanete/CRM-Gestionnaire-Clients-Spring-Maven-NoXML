@@ -68,8 +68,7 @@ public class ControleurClientREST {
 		
 		
 		serviceClient.updateClient(unClientClass);
-		
-				
+	
 		return unClientClass;
 		
 	}

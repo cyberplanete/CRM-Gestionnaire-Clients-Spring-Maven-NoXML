@@ -3,10 +3,13 @@ package crm.controleur;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,12 +21,16 @@ import crm.service.ServiceInformatique;
 
 @Configuration
 @Controller
-@RequestMapping("/Utilisateurs")
+@RequestMapping("/utilisateurs")
 public class ControleurUtilisateurs {
 
 	// Créer un lien automatiquement grace à cette annotation
 	@Autowired
 	private ServiceInformatique serviceInformatique;
+	
+	
+	
+	
 	
 	@RequestMapping("/liste")
 	public String listeUtilisateurs(Model model) {
@@ -49,16 +56,24 @@ public class ControleurUtilisateurs {
 
 		// Creer un attribut Model lier au formulaire ajouter-client.jp
 		UtilisateurClass utilisateurClass = new UtilisateurClass();
-		model.addAttribute("ajoutUtilisateurJSP", utilisateurClass);
+		model.addAttribute("utilisateurClassJSP", utilisateurClass);
 
 		return "ajouter-utilisateur";
 	}
 
 	@PostMapping("/processAjoutUtilisateur")
-	public String processAjoutUtilisateur(@ModelAttribute("utilisateurClassJSP") UtilisateurClass utilisateurClass) {
+	public String processAjoutUtilisateur(@Valid @ModelAttribute("utilisateurClassJSP") UtilisateurClass utilisateurClass, BindingResult bindingResult) {
 
-		serviceInformatique.ajoutUtilisateur(utilisateurClass);
-		return "redirect:/utilisateurs/liste/";
+		if (bindingResult.hasErrors()) {
+			System.out.println("formulaire contient des erreurs");
+			return "ajouter-utilisateur";
+		}else {
+			serviceInformatique.ajoutUtilisateur(utilisateurClass);
+			return "redirect:/utilisateurs/liste/";
+		}
+		
+		
+	
 	}
 
 	
