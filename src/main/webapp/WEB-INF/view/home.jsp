@@ -42,7 +42,7 @@ Bienvenue sur la page d'accueil de la société Cyberplanete!
 		<!-- Ajouter un lien pour pointer vers / systems ... ceci est pour les admins -->
 		
 		<p>
-			<a href="${pageContext.request.contextPath}/systems">IT Systemes Rencontre ..  en dev</a>
+			<a href="${pageContext.request.contextPath}/utilisateurs/liste">Liste des utilisateurs</a>
 			
 		</p>
 	
