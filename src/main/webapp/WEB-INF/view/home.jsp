@@ -43,7 +43,7 @@ Bienvenue sur la page d'accueil de la société Cyberplanete!
 		
 		<p>
 			<a href="${pageContext.request.contextPath}/utilisateurs/liste">Liste des utilisateurs</a>
-			
+			<a href="${pageContext.request.contextPath}/clients/liste">Liste des clients</a>
 		</p>
 	
 	</security:authorize>

@@ -50,10 +50,10 @@
 						<td><form:input path="nomUtilisateur" /></td>
 					</tr>
 					
-					<tr>
+				<%-- 	<tr>
 						<td><label>Mot de passe :</label></td>
-						<td><form:input path="motDePasse" /></td>
-					</tr>
+						<td><form:input  path="motDePasse" /></td>
+					</tr> --%>
 
 					<tr>
 						<td><label></label></td>
