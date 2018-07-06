@@ -85,7 +85,7 @@ public class ControleurClientREST {
 			throw new ClientNonTrouveException("Client non trouvé: " + IDClient);
 		}
 		
-		//Verifier si etudiant est dans la base
+		//Verifier si client est dans la base
 				if (IDClient >= listClients.size() || (IDClient < 0)) {
 					throw  new ClientNonTrouveException("Client id non trouvé - " + IDClient);
 				}
